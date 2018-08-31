@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Auth;
 
 class goToAdmin
 {
@@ -15,7 +16,7 @@ class goToAdmin
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::user() &&  Auth::user()->admin == 1) {
+        if (Auth::user() &&  Auth::user()->isAdmin == 1) {
             return redirect()->route('admin.landing');
         }
         else{

@@ -34,7 +34,7 @@ class BlogController extends Controller
 
         $blog->save();
 
-        return redirect()->route('blog.list');
+        return redirect()->route('admin.landing');
 
 
     }
@@ -53,12 +53,13 @@ class BlogController extends Controller
 
     public function update(Request $request,$id){
         Blog::where('id',$id)->update($request->except(['_token','_method']));
-        return redirect()->route('blog.list');
+        return redirect()->route('admin.landing');
     }
 
     public function destroy($id){
+       // dd($id);
         $blog = Blog::findorfail($id);
         $blog->delete();
-        return redirect()->back();
+        return redirect()->route('admin.landing');
     }
 }

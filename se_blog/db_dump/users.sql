@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Generation Time: Aug 31, 2018 at 06:28 PM
+-- Generation Time: Aug 31, 2018 at 08:28 PM
 -- Server version: 5.7.19
 -- PHP Version: 7.1.9
 
@@ -48,8 +48,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`, `isAdmin`) VALUES
 (1, 'BurbaCodes', 'dilushadasanayaka@gmail.com', '$2y$10$rO5B61MhRXNG9GMnc/IsQ.XfVgS.uewYhaitRwfLzH62Awo8bN4Yy', '5HfjQE87tU7jyF02cvrbkzl9eeHS9SM9gPoJT1PCUHWnEScuKUKMA7O6boAV', '2018-08-31 02:13:15', '2018-08-31 02:13:15', 0),
-(2, 'Dilusha Dasanayaka', 'dilushadasanayaka@yahoo.com.au', '$2y$10$MzZ/dkKk6Ujdinb.d85NyO4KrW2YZxDpT05kHSWdXNfOBtWf36w4i', 'djTfpvHvzxUJjyVV9VjNOpQXUBuIRdNB1fMQuJppCygIlx1qRj2PshpKJsuE', '2018-08-31 03:24:41', '2018-08-31 03:24:41', 1),
-(3, 'banuka', 'd@gmail.com', '$2y$10$aTwqdVo2QfIXbHwtacgh1eXZGpoxOz7OjfpGPtDA2I8mgt0VraUqO', 'fk5bOU0llrZd3Ry097LCqqqTXGQUVEuMS0FnHZjpnV5Gm2y1KvYsuCPtkUAS', '2018-08-31 11:55:26', '2018-08-31 11:55:26', 0);
+(2, 'Dilusha Dasanayaka', 'dilushadasanayaka@yahoo.com.au', '$2y$10$MzZ/dkKk6Ujdinb.d85NyO4KrW2YZxDpT05kHSWdXNfOBtWf36w4i', 'U32nVojEqoBZHsa0zDrXqohmyL616srALHDu7ta0g1B9jvdvBVjaABLewvx8', '2018-08-31 03:24:41', '2018-08-31 03:24:41', 1),
+(3, 'banuka', 'd@gmail.com', '$2y$10$aTwqdVo2QfIXbHwtacgh1eXZGpoxOz7OjfpGPtDA2I8mgt0VraUqO', '1DcbmPhELE7HOVo3KyZMD2G10z4LlLHZnbvjltZlB7wKjptPnb3zalYNTtg2', '2018-08-31 11:55:26', '2018-08-31 11:55:26', 1);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

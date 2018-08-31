@@ -15,9 +15,9 @@ Route::get('/', 'BlogController@getList');
 
 Auth::routes();
 
-Route::get('/admin','AdminController@index')->name('admin.landing');
+Route::get('/admin','AdminController@index')->middleware('admin')->name('admin.landing');
 
-Route::get('/home', 'BlogController@getList')->name('home');
+Route::get('/home', 'BlogController@getList')->middleware('goAdmin')->name('home');
 
 Route::get('/blog/list','BlogController@getList')->name('blog.list');
 
@@ -27,21 +27,21 @@ Route::get('/blog/create',function (){
     return view('blog.create');
 })->middleware('admin')->name('blog.create');
 
-Route::get('/blog/update/{id}','BlogController@toUpdate')->middleware('goAdmin');
+Route::get('/blog/update/{id}','BlogController@toUpdate')->middleware('auth');
 
 
-Route::get('/blog/{id}', 'BlogController@getOne')->middleware('auth')->name('blog');
+Route::get('/blog/{id}', 'BlogController@getOne')->middleware('admin')->name('blog');
 
 Route::post('/blog','BlogController@create')->middleware('admin')->name('blog');
 
-Route::patch('/blog/{id}', 'BlogController@update')->middleware('admin');
+Route::patch('/blog/{id}', 'BlogController@update');
 
-Route::delete('/blog/{id}','BlogController@destroy')->middleware('admin');
+Route::delete('/blog/{id}','BlogController@destroy');
 
 
-Route::get('admin/report','ExportExcelController@index')->middleware('admin');
-Route::get('/report/download','ExportExcelController@excel')->middleware('admin')->name('export_excel.excel');
-Route::get('/report/blogs/download','ExportExcelController@excelBlogs')->middleware('admin')->name('export_blogs.excel');
+Route::get('admin/report','ExportExcelController@index');
+Route::get('/report/download','ExportExcelController@excel')->name('export_excel.excel');
+Route::get('/report/blogs/download','ExportExcelController@excelBlogs')->name('export_blogs.excel');
 
 
 // OAuth Routes

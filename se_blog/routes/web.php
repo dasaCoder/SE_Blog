@@ -18,6 +18,7 @@ Auth::routes();
 Route::get('/admin','AdminController@index')->middleware('admin')->name('admin.landing');
 
 Route::get('/home', 'BlogController@getList')->middleware('goAdmin')->name('home');
+Route::get('/home1', 'BlogController@getList')->middleware('auth');
 
 Route::get('/blog/list','BlogController@getList')->name('blog.list');
 

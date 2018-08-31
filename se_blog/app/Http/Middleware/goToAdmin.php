@@ -20,7 +20,7 @@ class goToAdmin
             return redirect()->route('admin.landing');
         }
         else{
-            return redirect('/home');
+            return redirect('/home1');
         }
 
         //return redirect('/');

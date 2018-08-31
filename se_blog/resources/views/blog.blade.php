@@ -24,16 +24,15 @@
 
 
             <div class="entity_thumb">
-                <img class="img-responsive" src="{{asset('assets/img/category_img_top.jpg" alt="feature-top')}}">
+                <img class="img-responsive" src="{{url('uploads/'.$blog->filename)}}" style="max-height: 300px">
             </div>
             <!-- entity_thumb -->
 
-            <div class="entity_content">
-                {!! $blog->body !!}}
-            </div>
+
             <!-- entity_content -->
 
         </div>
+        <hr>
         @endforeach
 
 <!-- entity_wrapper -->

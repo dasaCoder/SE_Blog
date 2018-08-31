@@ -26,7 +26,7 @@
 
 
                            <div class="entity_thumb">
-                               <img class="img-responsive" src="{{url('uploads/'.$blog->filename)}}">
+                               <img class="img-responsive" src="{{url('uploads/'.$blog->filename)}}" style="max-height: 300px">
                            </div>
                            <!-- entity_thumb -->
 
@@ -36,14 +36,14 @@
 
 
 
-                                    <button class="btn red" onclick="deleteBlog()">Delete</button>
+                                    <button class="btn red" onclick="deleteBlog{{$blog->id}}()">Delete</button>
                                     <form id="delete-form-{{$blog->id}}" action="{{ url('/blog/'.$blog->id) }}" method="post">
                                         @csrf
                                         @method("DELETE")
                                         {{--<input type="submit" class="btn btn-danger btn-sm" href="{{ url('/blog/'.$blog->id)}}" value="Delete" onclick="return confirm('Are You Sure To Delete This Item? ')">--}}
                                     </form>
                                     <script>
-                                       function deleteBlog(){
+                                       function deleteBlog{{$blog->id}}(){
 
                                            if(confirm('Are You Sure To Delete This Item? ')){
                                                document.getElementById('delete-form-{{$blog->id}}').submit();
@@ -57,6 +57,8 @@
 
 
                        </div>
+
+                       <hr>
                @endforeach
 
                <!-- entity_wrapper -->

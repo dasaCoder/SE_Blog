@@ -5,6 +5,8 @@
     <div class="container-fluid">
         <div class="containere">
 
+            {{auth()->user()->admin}}
+
             <form action="{{route('blog')}}" method="post" enctype="multipart/form-data">
                 @csrf
 
@@ -25,7 +27,10 @@
 
                 <div class="form-group">
                     <select class="form-control" name="type" id="">
-                        <option value="mobile">Mobile</option>
+                        <option value="Mobile">Mobile</option>
+                        <option value="Web">Web</option>
+                        <option value="Programming">Programming</option>
+                        <option value="AI">AI</option>
                     </select>
                 </div>
 

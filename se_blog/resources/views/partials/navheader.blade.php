@@ -55,6 +55,7 @@
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{{ Auth::user()->name }}<i
                                                 class="fa fa-angle-down"></i></button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                        <li><a href="{{route('admin.landing')}}">Profile</a></li>
                                         <li><a
                                                     href="{{ route('logout') }}"
                                                     onclick="event.preventDefault();

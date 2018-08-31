@@ -23,6 +23,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/blog/list','BlogController@getList')->name('blog.list');
 
+
+
 // need to authenticate
 
 Route::get('/blog/create',function (){

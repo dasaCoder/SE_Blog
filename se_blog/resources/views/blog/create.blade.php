@@ -8,9 +8,35 @@
             <form action="{{route('blog')}}" method="post">
                 @csrf
 
+                <!-- Validation Alert -->
+                @if(count($errors)>0)
+                            @foreach($errors->all() as $error)
+                                <div class="alert alert-danger">{{$error}}</div>
+                            @endforeach
+                  @endif
+                <!--  -->
+
                 <input type="text" name="title">
 
+
+
+                <!-- check title -->
+                 @if ($errors->has('title'))
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $errors->first('title') }}</strong>
+                    </span>
+                @endif
+
                 <textarea name="body" id="" cols="20" rows="20"></textarea>
+
+                <!-- check body -->
+                @if ($errors->has('body'))
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $errors->first('body') }}</strong>
+                     </span>
+                @endif
+
+
 
                 <select name="type" id="">
                     <option value="mobile">Mobile</option>

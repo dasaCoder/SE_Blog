@@ -13,7 +13,17 @@ class BlogController extends Controller
         return view('blog.single')->with('blog',$blog);
     }
 
+
+
     public function create(Request $request){
+        
+        // form validation
+        $validatedData = $request->validate([
+            'title' => 'required|max:255',
+            'body' => 'required',
+        ]);
+
+
         $blog = new Blog;
 
         $blog->title = $request->input("title");

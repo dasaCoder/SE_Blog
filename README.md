@@ -1,4 +1,25 @@
 # se_blog
+
+## guidelines
+
+1.Clone the repository master branch to the server directory
+```sh
+$ git clone https://github.com/dasaCoder/se_blog.git
+```
+
+2.Run composer install in the cmd in the directory 
+```sh
+$ composer install
+```
+3.copy the env file 
+```sh
+$ cp .env.example .env
+```
+3.Generate the application ID
+```sh
+$ php artisan key:generate
+```
+
 ### Group
 
 

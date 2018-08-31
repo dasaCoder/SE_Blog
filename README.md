@@ -1,4 +1,10 @@
 # se_blog
+
+simple blog site which have multipe admininstrators and users.
+Admins can create blogs and maintain them while normal users only able to read them.
+
+## future Updates
+[x] Enable users to comment
 ## Advanced Web Application Development Group Project
 ## Technologies 
 ----

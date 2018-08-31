@@ -11,15 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'BlogController@getList');
 
 Auth::routes();
 
-Route::get('/admin','AdminController@index');
+Route::get('/admin','AdminController@index')->name('admin.landing');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'BlogController@getList')->name('home');
 
 Route::get('/blog/list','BlogController@getList')->name('blog.list');
 

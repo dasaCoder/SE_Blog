@@ -16,6 +16,7 @@
 
                     You are logged in!
                         {{Auth::user()->name}}
+                    test change
                 </div>
             </div>
         </div>

@@ -1,4 +1,4 @@
-# se_blog
+# se_blog - Group 6
 
 simple blog site which have multipe admininstrators and users.
 Admins can create blogs and maintain them while normal users only able to read them.

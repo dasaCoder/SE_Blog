@@ -1,4 +1,5 @@
 # se_blog
+## Advanced Web Application Development Group Project
 ## Technologies 
 ----
 Laravel 5.6 , PHP -7.1.9 , MySQL 5.7.19, Composer

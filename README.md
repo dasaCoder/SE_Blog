@@ -1,5 +1,9 @@
 # se_blog
-
+## Technologies 
+----
+Laravel 5.6 , PHP -7.1.9 , MySQL 5.7.19, Composer
+-----
+----
 ## guidelines
 
 1.Clone the repository master branch to the server directory
@@ -15,9 +19,13 @@ $ composer install
 ```sh
 $ cp .env.example .env
 ```
-3.Generate the application ID
+4.Generate the application ID
 ```sh
 $ php artisan key:generate
+```
+5.Migrate the data base models using
+```sh
+$ php artisan migrate
 ```
 
 ### Group

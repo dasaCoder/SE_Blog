@@ -5,7 +5,7 @@
     <div class="container">
         <div class="header-section">
             <div class="row">
-                <div class="col-md-4">
+                {{--<div class="col-md-4">
                     <div class="left_section">
                                             <span class="date">
                                                 Sunday .
@@ -29,7 +29,7 @@
                         <!-- Top Social Section -->
                     </div>
                     <!-- Left Header Section -->
-                </div>
+                </div>--}}
                 <div class="col-md-4">
                     <div class="logo">
                         <a href="index.html"><img src="{{asset('assets/img/logo.png{')}}" alt="Tech NewsLogo"></a>
@@ -82,7 +82,7 @@
                         </ul>
                         <!-- Language Section -->
 
-                        <ul class="nav-cta hidden-xs">
+                        {{--<ul class="nav-cta hidden-xs">
                             <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><i
                                         class="fa fa-search"></i></a>
                                 <ul class="dropdown-menu">
@@ -102,7 +102,7 @@
                                     </li>
                                 </ul>
                             </li>
-                        </ul>
+                        </ul>--}}
                         <!-- Search Section -->
                     </div>
                     <!-- Right Header Section -->
@@ -116,5 +116,6 @@
     </div>
     <!-- .container -->
 </section>
+
 
 @endsection

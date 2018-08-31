@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Blog;
 use Auth;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class BlogController extends Controller
 {
@@ -13,22 +15,21 @@ class BlogController extends Controller
         return view('blog.single')->with('blog',$blog);
     }
 
-
-
     public function create(Request $request){
-        
-        // form validation
-        $validatedData = $request->validate([
-            'title' => 'required|max:255',
-            'body' => 'required',
-        ]);
-
-
         $blog = new Blog;
+
+        $cover = $request->file('coverimg');
+        $extension = $cover->getClientOriginalExtension();
+        Storage::disk('public')->put($cover->getFilename().'.'.$extension,  File::get($cover));
 
         $blog->title = $request->input("title");
         $blog->body = $request->input('body');
         $blog->type = $request->input('type');
+
+        $blog->mime = $cover->getClientMimeType();
+        $blog->original_filename = $cover->getClientOriginalName();
+        $blog->filename = $cover->getFilename().'.'.$extension;
+
         $blog->user_id = Auth::user()->id;
 
         $blog->save();
@@ -55,9 +56,9 @@ class BlogController extends Controller
         return redirect()->route('blog.list');
     }
 
-    public function delete($id){
+    public function destroy($id){
         $blog = Blog::findorfail($id);
         $blog->delete();
-        return redirect()->route('blog.list');
+        return redirect()->back();
     }
 }

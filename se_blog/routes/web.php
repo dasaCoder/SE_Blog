@@ -30,7 +30,7 @@ Route::get('/blog/create',function (){
 Route::get('/blog/update/{id}','BlogController@toUpdate');
 
 
-Route::get('/blog/{id}', 'BlogController@getOne')->name('blog');
+Route::get('/blog/{id}', 'BlogController@getOne')->middleware('auth')->name('blog');
 
 Route::post('/blog','BlogController@create')->name('blog');
 

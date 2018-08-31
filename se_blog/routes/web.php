@@ -27,7 +27,7 @@ Route::get('/blog/create',function (){
     return view('blog.create');
 })->middleware('admin')->name('blog.create');
 
-Route::get('/blog/update/{id}','BlogController@toUpdate')->middleware('admin');
+Route::get('/blog/update/{id}','BlogController@toUpdate')->middleware('goAdmin');
 
 
 Route::get('/blog/{id}', 'BlogController@getOne')->middleware('auth')->name('blog');

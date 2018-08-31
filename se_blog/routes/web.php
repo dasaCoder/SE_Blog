@@ -11,15 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'BlogController@getList');
 
 Auth::routes();
 
-Route::get('/admin','AdminController@index');
+Route::get('/admin','AdminController@index')->name('admin.landing');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'BlogController@getList')->name('home');
 
 Route::get('/blog/list','BlogController@getList')->name('blog.list');
 
@@ -44,3 +42,12 @@ Route::delete('/blog/{id}','BlogController@destroy');
 Route::get('admin/report','ExportExcelController@index');
 Route::get('/report/download','ExportExcelController@excel')->name('export_excel.excel');
 Route::get('/report/blogs/download','ExportExcelController@excelBlogs')->name('export_blogs.excel');
+
+
+// OAuth Routes
+
+
+Route::get('/login/{social}','Auth\LoginController@socialLogin')
+    ->where('social','twitter|facebook|linkedin|google|github');
+Route::get('/login/{social}/callback','Auth\LoginController@handleProviderCallback')
+    ->where('social','twitter|facebook|linkedin|google|github');

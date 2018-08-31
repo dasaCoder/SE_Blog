@@ -26,7 +26,8 @@ class LoginController extends Controller
         $user = User::where(['email' => $userSocial->getEmail()])->first();
         if ($user) {
             Auth::login($user);
-            return redirect()->action('HomeController@index');
+            //return redirect()->action('HomeController@index');
+            return redirect()->route('admin.landing');
         } else {
             return view('auth.register', ['name' => $userSocial->getName(),'email'=> $userSocial->getEmail()]);
         }

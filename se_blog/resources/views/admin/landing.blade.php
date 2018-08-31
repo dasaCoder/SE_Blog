@@ -26,7 +26,7 @@
 
 
                            <div class="entity_thumb">
-                               <img class="img-responsive" src="{{asset('assets/img/category_img_top.jpg" alt="feature-top')}}">
+                               <img class="img-responsive" src="{{url('uploads/'.$blog->filename)}}">
                            </div>
                            <!-- entity_thumb -->
 
@@ -67,14 +67,27 @@
 
                    <div class="widget m30">
                        <div class="widget_title widget_black">
+                           <h2><a href="#">Create Blog</a></h2>
+                       </div>
+                       <div class="widget_body">
+
+                           <p>World is waiting for hear from you</p>
+
+
+                           <button class="btn green" onclick="window.location='{{ url("/blog/create") }}'">Create</button>
+                       </div>
+                   </div>
+
+                   <div class="widget m30">
+                       <div class="widget_title widget_black">
                            <h2><a href="#">Reports</a></h2>
                        </div>
-                       <div class="widget_body"><img class="img-responsive left" src="assets/img/reader.jpg" alt="Generic placeholder image">
+                       <div class="widget_body">
 
                            <p>This function will export web sites statistices to excel file</p>
 
 
-                           <button class="btn green">Generate Report</button>
+                           <button class="btn blue" onclick="window.location='{{ url("admin/report") }}'">Generate Report</button>
                        </div>
                    </div>
                </div>

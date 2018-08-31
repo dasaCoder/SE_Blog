@@ -17,7 +17,7 @@
 
 
     <div class="entity_thumb">
-        <img class="img-responsive" src="assets/img/category_img_top.jpg" alt="feature-top">
+        <img class="img-responsive" src="{{url('uploads/'.$blog->filename)}}" alt="feature-top">
     </div>
     <!-- entity_thumb -->
 
@@ -39,7 +39,7 @@
     </div>
     <!-- entity_title -->
 
-    <div class="media">
+    {{--<div class="media">
         <div class="media-left">
             <a href="#">
                 <img alt="64x64" class="media-object" data-src="assets/img/reader_img1.jpg"
@@ -78,10 +78,10 @@
             </div>
         </div>
 
-    </div>
+    </div>--}}
     <!-- media end -->
 
-    <div class="media">
+    {{--<div class="media">
         <div class="media-left">
             <a href="#">
                 <img alt="64x64" class="media-object" data-src="assets/img/reader_img3.jpg"
@@ -99,7 +99,7 @@
                 <a href="#"><span class="reply_ic">Reply </span></a>
             </div>
         </div>
-    </div>
+    </div>--}}
     <!-- media end -->
 </div>
 <!--Readers Comment-->
@@ -114,12 +114,7 @@
 
     <div class="entity_comment_from">
         <form>
-            <div class="form-group">
-                <input type="text" class="form-control" id="inputName" placeholder="Name">
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control" id="inputEmail" placeholder="Email">
-            </div>
+
             <div class="form-group comment">
                 <textarea class="form-control" id="inputComment" placeholder="Comment"></textarea>
             </div>

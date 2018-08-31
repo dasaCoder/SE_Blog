@@ -61,6 +61,6 @@
                 '//www.tinymce.com/css/codepen.min.css']
         });
     </script>
-<!-- //// -->
+<!-- //// //-->
 
     @endsection

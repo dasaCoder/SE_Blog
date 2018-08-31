@@ -9,7 +9,7 @@
             <table class="table table-striped">
 
                 <tr>
-
+                <!-- detail -->
                     <td>User ID</td>
                     <td>User name</td>
                     <td>Email</td>

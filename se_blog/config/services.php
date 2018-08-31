@@ -43,7 +43,7 @@ return [
     'facebook' => [
         'client_id' => '317817035433027',
         'client_secret' => 'c9c4be37c579bb9447cc67d25c5f3ea1',
-        'redirect' => 'http://localhost/se_blog/se_blog/public/login/facebook/callback',
+        'redirect' => 'http://localhost/inthu/se_blog/se_blog/public/login/facebook/callback',
     ],
 
 

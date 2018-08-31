@@ -30,10 +30,31 @@
                            </div>
                            <!-- entity_thumb -->
 
-                           <div class="entity_content">
-                               {!! $blog->body !!}}
-                           </div>
-                           <!-- entity_content -->
+                                <div class="widget_body">
+                                    <button class="btn blue" onclick="window.location='{{ url("/blog/".$blog->id) }}'">View</button>
+                                    <button class="btn purple" onclick="window.location='{{ url("/blog/update/".$blog->id) }}'">Edit</button>
+
+
+
+                                    <button class="btn red" onclick="deleteBlog()">Delete</button>
+                                    <form id="delete-form-{{$blog->id}}" action="{{ url('/blog/'.$blog->id) }}" method="post">
+                                        @csrf
+                                        @method("DELETE")
+                                        {{--<input type="submit" class="btn btn-danger btn-sm" href="{{ url('/blog/'.$blog->id)}}" value="Delete" onclick="return confirm('Are You Sure To Delete This Item? ')">--}}
+                                    </form>
+                                    <script>
+                                       function deleteBlog(){
+
+                                           if(confirm('Are You Sure To Delete This Item? ')){
+                                               document.getElementById('delete-form-{{$blog->id}}').submit();
+                                           };
+
+                                        }
+                                    </script>
+                                </div>
+
+
+
 
                        </div>
                @endforeach
@@ -53,7 +74,7 @@
                            <p>This function will export web sites statistices to excel file</p>
 
 
-                           <button class="btn pink">Generate Report</button>
+                           <button class="btn green">Generate Report</button>
                        </div>
                    </div>
                </div>

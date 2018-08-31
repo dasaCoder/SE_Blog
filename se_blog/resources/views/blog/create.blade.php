@@ -5,44 +5,37 @@
     <div class="container-fluid">
         <div class="containere">
 
-            <form action="{{route('blog')}}" method="post">
+            <form action="{{route('blog')}}" method="post" enctype="multipart/form-data">
                 @csrf
 
-                <!-- Validation Alert -->
-                @if(count($errors)>0)
-                            @foreach($errors->all() as $error)
-                                <div class="alert alert-danger">{{$error}}</div>
-                            @endforeach
-                  @endif
-                <!--  -->
+                <div class="form-group">
+                    <label for="">Title</label>
+                    <input class="form-control" type="text" name="title">
+                </div>
 
-                <input type="text" name="title">
+               <div class="form-group">
+                   <label for="">Cover Image</label>
+                   <input type="file" class="form-control" name="coverimg"/>
+               </div>
 
 
 
-                <!-- check title -->
-                 @if ($errors->has('title'))
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('title') }}</strong>
-                    </span>
-                @endif
 
                 <textarea name="body" id="" cols="20" rows="20"></textarea>
 
-                <!-- check body -->
-                @if ($errors->has('body'))
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('body') }}</strong>
-                     </span>
-                @endif
+                <div class="form-group">
+                    <select class="form-control" name="type" id="">
+                        <option value="mobile">Mobile</option>
+                    </select>
+                </div>
 
 
 
-                <select name="type" id="">
-                    <option value="mobile">Mobile</option>
-                </select>
+                <div class="form-group">
+                    <input type="submit" value="Add">
+                </div>
 
-                <input type="submit" value="Add">
+
 
 
             </form>

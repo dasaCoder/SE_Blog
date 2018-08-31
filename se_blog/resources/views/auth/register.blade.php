@@ -87,7 +87,7 @@
                                     <div class="col-md-8 col-md-offset-2">
 
                                         <a href="{{ url('login/facebook') }}" class="btn btn-social-icon btn-facebook"><i class="fa fa-facebook"></i> Facebook</a>
-                                        
+
                                         <a href="{{ url('login/github') }}" class="btn btn-social-icon btn-github"><i class="fa fa-github"></i> Github</a>
                                     </div>
                                 </div>
